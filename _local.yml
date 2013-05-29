@@ -1,0 +1,8 @@
+# Jekyll Configuration for local testing.
+permalink: none
+url: 
+
+# GitHub Pages forced options
+safe: true
+lsi: false
+pygments: true
