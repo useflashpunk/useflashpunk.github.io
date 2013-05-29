@@ -6,6 +6,15 @@ category: getting-started
 
 FlashPunk is an ActionScript 3 library, meaning it is not a piece of software or single program, but rather a huge collection of ActionScript 3 (.as) files that contain helpful code for setting up your games, rendering different types of graphics, resolving in-game collisions between objects, and much, much more. In order to use it, you're doing to have to download the library and import it into your projects.
 
+## Contents
+
+<ul class="nav nav-pills nav-stacked">
+    <li><a href="#download-flashpunk">1. Download FlashPunk</a></li>
+	<li><a href="#start-creating">2. Start Creating!</a></li>
+</ul>
+
+<h2 id="download-flashpunk">1. Download FlashPunk</h2>
+
 So your first step is to actually get the FlashPunk source files.
 
 [Download FlashPunk][1]
@@ -24,6 +33,8 @@ If you've followed the [Setting up FlashDevelop][2] tutorial, you know how to st
     		FP.as
     		...etc.
     Main.as
+
+<h2 id="start-creating">Start Creating!</h2>
 
 Once you've got that all set up, you're ready to proceed to [FlashPunk Basics][3]!
 
