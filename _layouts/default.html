@@ -4,8 +4,8 @@
     <title>FlashPunk: {{ page.title }}</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Bootstrap -->
-    <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
-    <link rel="icon" type="image/png" href="img/fp-favicon.png">
+    <link href="{{ site.url }}/css/bootstrap.min.css" rel="stylesheet" media="screen">
+    <link rel="icon" type="image/png" href="{{ site.url}}/img/fp-favicon.png">
     <style type="text/css">
       body {
         padding-top: 20px;
@@ -58,11 +58,12 @@
 
       <div class="masthead">
         <ul class="nav nav-pills pull-right">
-          <li class="active"><a href="/">Home</a></li>
+          <li><a href="{{ site.url }}">Home</a></li>
           <li><a href="http://developers.useflashpunk.net">Community</a></li>
-          <li><a href="/docs">Documentation</a></li>
-          <li><a href="/tutorials">Tutorials</a></li>
+          <li><a href="{{ site.url }}/docs">Documentation</a></li>
+          <li><a href="{{ site.url }}/tutorials">Tutorials</a></li>
           <li><a href="https://github.com/Draknek/FlashPunk">Source</a></li>
+          <li><a href="{{ site.url }}/donate"><i class="icon-heart"></i> Donate</a></li>
         </ul>
         <h3 class="muted">FlashPunk</h3>
       </div>
@@ -79,6 +80,6 @@
       </div>
     </div>
     <script src="http://code.jquery.com/jquery.js"></script>
-    <script src="js/bootstrap.min.js"></script>
+    <script src="{{ site.url }}/js/bootstrap.min.js"></script>
   </body>
 </html>
