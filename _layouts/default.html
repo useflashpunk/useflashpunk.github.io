@@ -1,65 +1,76 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>FlashPunk Tutorial: {{ page.title }}</title>
+    <title>FlashPunk: {{ page.title }}</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Bootstrap -->
-    <link href="{{site.url}}/css/bootstrap.min.css" rel="stylesheet" media="screen">
-    <link rel="icon" type="image/png" href="{{site.url}}/img/fp-favicon.png">
+    <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
+    <link rel="icon" type="image/png" href="img/fp-favicon.png">
     <style type="text/css">
       body {
         padding-top: 20px;
         padding-bottom: 40px;
       }
+
+      /* Custom container */
+      .container-narrow {
+        margin: 0 auto;
+        max-width: 800px;
+      }
+      .container-narrow > hr {
+        margin: 30px 0;
+      }
+
+      /* Main marketing message and sign up button */
+      .jumbotron {
+        margin: 60px 0;
+        text-align: center;
+      }
+      .jumbotron h1 {
+        font-size: 72px;
+        line-height: 1;
+      }
+      .jumbotron .btn {
+        font-size: 21px;
+        padding: 14px 24px;
+      }
+
+      /* Supporting marketing content */
+      .marketing {
+        margin: 20px 0;
+      }
+      .marketing p + h4 {
+        margin-top: 28px;
+      }
+
+      .primary-action {
+        margin-bottom: 16px;
+      }
+
+      .lead {
+        margin-top: 48px;
+      }
     </style>
-    <link href="{{site.url}}/css/pygments.css" rel="stylesheet" media="screen">
   </head>
 
   <body>
-    <div class="container-fluid">
+    <div class="container-narrow">
+
       <div class="masthead">
         <ul class="nav nav-pills pull-right">
-          <li><a href="{{site.url}}/">Home</a></li>
+          <li class="active"><a href="/">Home</a></li>
           <li><a href="http://developers.useflashpunk.net">Community</a></li>
-          <li><a href="{{site.url}}/docs">Documentation</a></li>
-          <li class="active"><a href="{{site.url}}/tutorials">Tutorials</a></li>
+          <li><a href="/docs">Documentation</a></li>
+          <li><a href="/tutorials">Tutorials</a></li>
           <li><a href="https://github.com/Draknek/FlashPunk">Source</a></li>
         </ul>
         <h3 class="muted">FlashPunk</h3>
       </div>
 
       <hr>
-      <div class="row">
-      <div class="span3">
-        <!-- Navigation Sidebar -->
-        <ul class="nav nav-list">
-          <li class="nav-header">Getting Started</li>
-          {% for post in site.categories.getting-started reversed %}
-          <li><a href="{{ site.url }}{{ post.url }}">{{ post.title }}</a></li>
-          {% endfor %}
+    
+     {{ content }}    
 
-          <li class="nav-header">Basic</li>
-          {% for post in site.categories.basic reversed %}
-          <li><a href="{{ site.url }}{{ post.url }}">{{ post.title }}</a></li>
-          {% endfor %}
-
-          <li class="nav-header">Intermediate</li>
-          {% for post in site.categories.intermediate reversed %}
-          <li><a href="{{ site.url }}{{ post.url }}">{{ post.title }}</a></li>
-          {% endfor %}
-        </ul>
-      </div>
-      <div class="span9">
-        <div class="page-header">
-          <h1>{{ page.title }}</h1>
-        </div>
-        
-        <!-- Post Content -->
-        {{ content }}
-      </div>
-      </div>
-
-      
       <hr>
 
       <div class="footer">
@@ -68,6 +79,6 @@
       </div>
     </div>
     <script src="http://code.jquery.com/jquery.js"></script>
-    <script src="{{site.url}}/js/bootstrap.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
   </body>
 </html>
