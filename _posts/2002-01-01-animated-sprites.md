@@ -23,7 +23,7 @@ The first thing we need to do is create a [Spritemap][] object for our Entity, s
 	<p><em>Copyright &copy; 2010 Tyriq Plummer</em></p>
 </div>
 
-The spritesheet's total size is 288×64 pixels, but each individual frame is 48×32 pixels, which is what we need to know to create it into a [Spritemap][] object. So in this example, we will create a Player class and embed the PNG first: 
+The spritesheet's total size is 288x64 pixels, but each individual frame is 48x32 pixels, which is what we need to know to create it into a [Spritemap][] object. So in this example, we will create a Player class and embed the PNG first: 
 
 {% highlight actionscript %}
 package
