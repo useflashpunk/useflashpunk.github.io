@@ -4,14 +4,17 @@ title: Handling Collision
 category: basic
 ---
 
-If you've read the [FlashPunk Basics][1] and [Keyboard & Mouse Input][2] tutorials, you're familiar with making an Entity appear and move around with the arrow keys. But one of the most useful things to be able to do in a game is make Entities interact with each other in different ways, and FlashPunk has a set of useful collision functions for this purpose that will be explained in this tutorial.
+If you've read the [FlashPunk Basics][basics] and [Keyboard & Mouse Input][input] tutorials, you're familiar with making an Entity appear and move around with the arrow keys. But one of the most useful things to be able to do in a game is make Entities interact with each other in different ways, and FlashPunk has a set of useful collision functions for this purpose that will be explained in this tutorial.
 
- - Assigning Hitboxes
- - Collision Types
- - Colliding Entities
+## Contents
 
-Assigning hitboxes
---
+<ul class="nav nav-pills nav-stacked">
+	<li><a href="#assigning-hitboxes">1. Assigning Hitboxes</a></li>
+	<li><a href="#collision-types">2. Collision Types</a></li>
+	<li><a href="#colliding-entities">3. Colliding Entities</a></li>
+</ul>
+
+<h2 id="assigning-hitboxes">Assigning Hitboxes</h2>
 
 FlashPunk uses rectangles for all base-level collision between Entities; you define a rectanular collision area for your Entity, called its **hitbox**, and then you can use FlashPunk's functions to test if one Entity's hitbox intersects with anothers'. So if we have an Entity called **Player**, in it we can define hitbox parameters like this:
 
@@ -54,8 +57,7 @@ package
 }
 {% endhighlight %}
 
-Collision types
---
+<h2 id="collision-types">Collision Types</h2>
 
 So we created the bullet Entity and gave it a 10×10 hitbox, but there's one more line we need to add before we can check if they intersect:
 
@@ -75,7 +77,7 @@ package
 }
 {% endhighlight %}
 
-Here, I assign a [type][3] to the bullet Entity, and give it the value "bullet". What this does is categorizes the object under the "bullet" type in FlashPunk, because when you want to check for collision against another Entity, you have to provide a type to check against.
+Here, I assign a [type][entity-type] to the bullet Entity, and give it the value "bullet". What this does is categorizes the object under the "bullet" type in FlashPunk, because when you want to check for collision against another Entity, you have to provide a type to check against.
 
 > Entity types must be a string value, and do not have to share a name
 > with their corresponding object. You could have multiple different
@@ -86,10 +88,9 @@ Here, I assign a [type][3] to the bullet Entity, and give it the value "bullet".
 > you how to check if our Player is colliding with a Bullet object by
 > using this assigned type.
 
-Colliding entities
---
+<h2 id="colliding-entities">Colliding Entities</h2>
 
-Now that we have our Bullet Entity classified under the "bullet" group, we can go back to our Player and use Entity's handy [collide()][4] function to check if our Player is intersecting with any instances of the "bullet" type in the World:
+Now that we have our Bullet Entity classified under the "bullet" group, we can go back to our Player and use Entity's handy [collide()][entity-collide] function to check if our Player is intersecting with any instances of the "bullet" type in the World:
 
 {% highlight actionscript %}
 package
@@ -197,9 +198,7 @@ package
 This time, instead of putting collide() in the statement, we just assign its return value to a variable. What the collide() function will do is check the World for any intersecting instances of "bullet", and if it finds one, it will return the value of that Entity object. If it doesn't find any intersections, it will return the ActionScript **null** type. With this knowledge, we can then use that assigned variable in the if-statement, since the statement will only evaluate true for a non-null value. Then, I simply use the variable as access to call the Bullet's destroy() function.
 
 
-  [1]: {% post_url 2001-01-01-flashpunk-basics %}
-  [2]: {% post_url 2001-01-02-keyboard-and-mouse-input %}
-  [3]: http://useflashpunk.net/docs/net/flashpunk/Entity.html#type
-  [4]: http://useflashpunk.net/docs/net/flashpunk/Entity.html#collide%28%29
-
-*Original tutorial by Chevy Ray Johnston*
+[basics]: {% post_url 2001-01-01-flashpunk-basics %}
+[input]: {% post_url 2001-01-02-keyboard-and-mouse-input %}
+[entity-type]: http://useflashpunk.net/docs/net/flashpunk/Entity.html#type
+[entity-collide]: http://useflashpunk.net/docs/net/flashpunk/Entity.html#collide%28%29

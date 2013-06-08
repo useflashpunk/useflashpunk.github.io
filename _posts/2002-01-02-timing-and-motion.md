@@ -4,15 +4,17 @@ title: Timing &amp; Motion
 category: intermediate
 ---
 
-If you've already read [FlashPunk Basics][1] and [Keyboard & Mouse Input][2], you know that you can change an Entity's position by altering its [x][3] and [y][4] properties, which will, in turn, alter the position at which it is drawn to the screen. This tutorial will cover some important things to know about timing and motion while using FlashPunk, related to the timestep chosen when your game starts.
+If you've already read [FlashPunk Basics][basics] and [Keyboard & Mouse Input][input], you know that you can change an Entity's position by altering its [x][entity-x] and [y][entity-y] properties, which will, in turn, alter the position at which it is drawn to the screen. This tutorial will cover some important things to know about timing and motion while using FlashPunk, related to the timestep chosen when your game starts.
 
- - Choosing a Timestep
- - Basic Timing
- - Basic Motion
+## Contents
 
+<ul class="nav nav-pills nav-stacked">
+	<li><a href="#choosing-a-timestep">1. Choosing A Timestep</a></li>
+	<li><a href="#basic-timing">2. Basic Timing</a></li>
+	<li><a href="#basic-motion">3. Basic Motion</a></li>
+</ul>
 
-Choosing a timestep
---
+<h2 id="choosing-a-timestep">Choosing A Timestep</h2>
 
 FlashPunk supports two different types of timesteps:
 
@@ -36,17 +38,16 @@ package
 }
 {% endhighlight %}
 
-The 4th parameter in [Engine's constructor][5], "fixed", is whether you want your chosen framerate to be fixed or not. If I choose **true**, I am using a fixed timestep; if I choose **false** (as in the above code), I am using a variable timestep.
+The 4th parameter in [Engine's constructor][engine-constructor], "fixed", is whether you want your chosen framerate to be fixed or not. If I choose **true**, I am using a fixed timestep; if I choose **false** (as in the above code), I am using a variable timestep.
 
 How you do motion and timing differs based on which timestep type you are using in your game. The next steps will outline those differences and explain how to accomplish each with both timestep types. But before you start, it is important to note:
 
  - With a **fixed** timestep, time is in **frames**.
  - With a **variable** timestep, time is in **seconds**.
 
-This is because a fixed timestep tries to run at a constant framerate (for example, 60 frames per second). With a variable timestep it doesn't matter, your game will just loop at whatever speed it can. This is why, while using a variable timestep, your timing & motion will use the [FP.elapsed][6] property to judge how much time has passed since the last frame. Read on.
+This is because a fixed timestep tries to run at a constant framerate (for example, 60 frames per second). With a variable timestep it doesn't matter, your game will just loop at whatever speed it can. This is why, while using a variable timestep, your timing & motion will use the [FP.elapsed][fp-elapsed] property to judge how much time has passed since the last frame. Read on.
 
-Basic timing
---
+<h2 id="basic-timing">Basic Timing</h2>
 
 Timing is a huge part of developing games. One very simple thing you will use very often is counters, which is basically variables that increase (or decrease) in value every frame; then, you can have certain events performed when the counter reaches (or exceeds) a certain value.
 
@@ -85,7 +86,7 @@ So basically, the code within those brackets will be performed every 60 frames. 
 
 **Variable Timestep**
 
-When using a variable timestep, your counters operate in **seconds**, so a simple timing system would use [FP.elapsed][7] like this:
+When using a variable timestep, your counters operate in **seconds**, so a simple timing system would use [FP.elapsed][fp-elapsed] like this:
 
 {% highlight actionscript %}
 package
@@ -115,7 +116,7 @@ package
 }
 {% endhighlight %}
 
-So this is a bit more complicated. First, our **time** var must be a [Number][8] type, because we're working with decimal values. Second, instead of increasing our counter by 1 (++) every frame, we increase it by [FP.elapsed][9]. FP.elapsed is equal to the amount of seconds passed since the last frame, which means that if we keep adding to **time**, time will exceed 2 once more than 2 seconds has passed. So we check to see if 2 seconds has passed, and then reset the timer.
+So this is a bit more complicated. First, our **time** var must be a [Number][] type, because we're working with decimal values. Second, instead of increasing our counter by 1 (++) every frame, we increase it by [FP.elapsed][fp-elapsed]. FP.elapsed is equal to the amount of seconds passed since the last frame, which means that if we keep adding to **time**, time will exceed 2 once more than 2 seconds has passed. So we check to see if 2 seconds has passed, and then reset the timer.
 
 > If you're creating a looping timer like in the above example, here's
 > an even better way to do it:
@@ -137,8 +138,7 @@ override public function update():void
 > accurately without losing any time!
 
 
-Basic Motion
---
+<h2 id="basic-motion">Basic Motion</h2>
 
 This will not cover complex movement, just show you the difference between motion fixed and variable timestep motion with a simple moving object.
 
@@ -199,7 +199,7 @@ package
 }
 {% endhighlight %}
 
-This time, our **speed** variable represents our movement speed in **pixels per second**. Then, all we have to do to move our Entity is add the speed to the x-position like before, but this time we multiply it by our handy [FP.elapsed][10] property. Since FP.elapsed is equal to the time elapsed since the previous frame, this means that if 10% of a second passed, you will move by 1/10th of your movement speed. So after 1 entire second passes, you will have moved 1 entire length of your speed (50 pixels).
+This time, our **speed** variable represents our movement speed in **pixels per second**. Then, all we have to do to move our Entity is add the speed to the x-position like before, but this time we multiply it by our handy [FP.elapsed][fp-elapsed] property. Since FP.elapsed is equal to the time elapsed since the previous frame, this means that if 10% of a second passed, you will move by 1/10th of your movement speed. So after 1 entire second passes, you will have moved 1 entire length of your speed (50 pixels).
 
 > While this might seem like extra work for a simple task like movement,
 > when using a variable timestep it's a good way to ensure smooth
@@ -223,16 +223,10 @@ This time, our **speed** variable represents our movement speed in **pixels per 
 > is operating at the frame-level. But for a top-down shooter or perhaps
 > tower-defense game, this method would work just fine.
 
-
-  [1]: {% post_url 2001-01-01-flashpunk-basics %}
-  [2]: {% post_url 2001-01-02-keyboard-and-mouse-input %}
-  [3]: http://useflashpunk.net/docs/net/flashpunk/Entity.html#x
-  [4]: http://useflashpunk.net/docs/net/flashpunk/Entity.html#y
-  [5]: http://useflashpunk.net/docs/net/flashpunk/Engine.html#Engine%28%29
-  [6]: http://useflashpunk.net/docs/net/flashpunk/FP.html#elapsed
-  [7]: http://useflashpunk.net/docs/net/flashpunk/FP.html#elapsed
-  [8]: http://www.adobe.com/livedocs/flash/9.0/ActionScriptLangRefV3/Number.html
-  [9]: http://useflashpunk.net/docs/net/flashpunk/FP.html#elapsed
-  [10]: http://useflashpunk.net/docs/net/flashpunk/FP.html#elapsed
-
-*Original tutorial by Chevy Ray Johnston.*
+[basics]: {% post_url 2001-01-01-flashpunk-basics %}
+[input]: {% post_url 2001-01-02-keyboard-and-mouse-input %}
+[entity-x]: http://useflashpunk.net/docs/net/flashpunk/Entity.html#x
+[entity-y]: http://useflashpunk.net/docs/net/flashpunk/Entity.html#y
+[engine-constructor]: http://useflashpunk.net/docs/net/flashpunk/Engine.html#Engine%28%29
+[fp-elapsed]: http://useflashpunk.net/docs/net/flashpunk/FP.html#elapsed
+[number]: http://www.adobe.com/livedocs/flash/9.0/ActionScriptLangRefV3/Number.html

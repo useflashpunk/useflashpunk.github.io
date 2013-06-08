@@ -4,17 +4,20 @@ title: Keyboard &amp; Mouse Input
 category: basic
 ---
 
-This tutorial covers how to make your game objects respond to keyboard and mouse input in FlashPunk. This tutorial assumes that you have covered the [FlashPunk Basics][1] tutorial, and know how to add Entities to Worlds and assign them graphics.
+This tutorial covers how to make your game objects respond to keyboard and mouse input in FlashPunk. This tutorial assumes that you have covered the [FlashPunk Basics][basics] tutorial, and know how to add Entities to Worlds and assign them graphics.
 
- - Simple Key Checks
- - Specific Key States
- - Defining Controls
- - Mouse States
+## Contents
 
-Simple key checks
---
+<ul class="nav nav-pills nav-stacked">
+	<li><a href="#simple-key-checks">1. Simple Key Checks</a></li>
+	<li><a href="#specific-key-states">2. Specific Key States</a></li>
+	<li><a href="#defining-controls">3. Defining Controls</a></li>
+	<li><a href="#mouse-states">4. Mouse States</a></li>
+</ul>
 
-The simplest and quickest way to check for keyboard Input in FlashPunk is to use the state-checking functions provided by the [Input][2] class combined with the key-constants found in the [Key][3] class. Here is an example Entity object that checks various different keys are pressed down:
+<h2 id="simple-key-checks">Simple Key Checks</h2>
+
+The simplest and quickest way to check for keyboard Input in FlashPunk is to use the state-checking functions provided by the [Input][] class combined with the key-constants found in the [Key][] class. Here is an example Entity object that checks various different keys are pressed down:
 
 {% highlight actionscript %}
 package
@@ -51,7 +54,7 @@ package
 }
 {% endhighlight %}
 
-So for example, if we wanted to take our graphical Entity from the [FlashPunk Basics][4] tutorial, and make it move with the arrow keys, we could do something like this:
+So for example, if we wanted to take our graphical Entity from the [FlashPunk Basics][basics] tutorial, and make it move with the arrow keys, we could do something like this:
 
 {% highlight actionscript %}
 package
@@ -78,11 +81,10 @@ package
 }
 {% endhighlight %}
 
-Input's [check()][5] function will return true if the specified key is held down on the corresponding frame of that update, otherwise it will return false.
+Input's [check()][input-check] function will return true if the specified key is held down on the corresponding frame of that update, otherwise it will return false.
 
 
-Specific key states
---
+<h2 id="specific-key-states">Specific Key States</h2>
 
 Sometimes you want to check the state of a key more specifically, though, such as whether it was just pressed, or perhaps if it was just released. FlashPunk provides simple functions for this purpose as well, which are used similarly like this:
 
@@ -117,10 +119,9 @@ package
 }
 {% endhighlight %}
 
-The [pressed()][6] function will return true if the key was pressed down on that frame, and the [released()][7] will return true if it was released. Every frame the Input states are updated, so when a key is pressed down, it will be in a "pressed" state for one frame, and then in a "held" state the next frame and no longer "pressed". So you can call these functions in your Entity updates to manage your game objects' input.
+The [pressed()][input-pressed] function will return true if the key was pressed down on that frame, and the [released()][input-released] will return true if it was released. Every frame the Input states are updated, so when a key is pressed down, it will be in a "pressed" state for one frame, and then in a "held" state the next frame and no longer "pressed". So you can call these functions in your Entity updates to manage your game objects' input.
 
-Defining controls
---
+<h2 id="defining-controls">Defining Controls</h2>
 
 Sometimes it's nice to have certain controls mapped to several different keys; since it's a pain to have to repeat long statements checking for the state of each key, FlashPunk allows you to define and check controls by name as well. For example, I'll have our Entity define two different controls, "Shoot" and "Jump", and then assign several keys to each:
 
@@ -156,8 +157,7 @@ package
 
 Input's check(), pressed(), and released() functions all take a Key value or control name as parameters, so you can check for controls just the same as you check for individual keys.
 
-Mouse states
---
+<h2 id="mouse-states">Mouse states</h2>
 
 Similar to how you check for keys, you can check the state of the mouse using several properties provided by Input, like so:
 
@@ -222,12 +222,9 @@ package
 }
 {% endhighlight %}
 
-  [1]: {% post_url 2001-01-01-flashpunk-basics %}
-  [2]: http://useflashpunk.net/docs/net/flashpunk/utils/Input.html
-  [3]: http://useflashpunk.net/docs/net/flashpunk/utils/Key.html
-  [4]: {% post_url 2001-01-01-flashpunk-basics %}
-  [5]: http://useflashpunk.net/docs/net/flashpunk/utils/Input.html#check%28%29
-  [6]: http://useflashpunk.net/docs/net/flashpunk/utils/Input.html#pressed%28%29
-  [7]: http://useflashpunk.net/docs/net/flashpunk/utils/Input.html#pressed%28%29
-
-*Original tutorial by Chevy Ray Johnston*
+[basics]: {% post_url 2001-01-01-flashpunk-basics %} "FlashPunk Basics"
+[input]: http://useflashpunk.net/docs/net/flashpunk/utils/Input.html "net.flashpunk.utils.Input"
+[key]: http://useflashpunk.net/docs/net/flashpunk/utils/Key.html "net.flashpunk.utils.Key"
+[input-check]: http://useflashpunk.net/docs/net/flashpunk/utils/Input.html#check() "net.flashpunk.utils.Input.check()"
+[input-pressed]: http://useflashpunk.net/docs/net/flashpunk/utils/Input.html#pressed() "net.flashpunk.utils.Input.pressed()"
+[input-released]: http://localhost:4000/docs/net/flashpunk/utils/Input.html#released() "net.flashpunk.utils.Input.released()"

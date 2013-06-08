@@ -20,7 +20,7 @@ In this tutorial, we'll go through installing and configuring FlashDevelop. Flas
 <h2 id="install-flashdevelop">1. Install FlashDevelop</h2>
 
 
-First order of business is to get FlashDevelop installed and running on your PC, so let's do that. Go to the [FlashDevelop website][1] and download the latest version. Unless you're picky, just use the default installation preferences and follow through with the setup. When that's done, move on to the next step.
+First order of business is to get FlashDevelop installed and running on your PC, so let's do that. Go to the [FlashDevelop website][flashdevelop] and download the latest version. Unless you're picky, just use the default installation preferences and follow through with the setup. When that's done, move on to the next step.
 
 <div class="text-center">
 <img src="{{ site.url }}/assets/flashdevelop-download-button.png" title="FlashDevelop Download Button" class="img-polaroid">
@@ -117,13 +117,13 @@ And in the Test Movie drop-down box, try changing the display type.
 
 <h2 id="download-flex">3. Download the Flex SDK</h2>
 
-First we need to download the Flex 4 SDK. This is the free codebase provided by Adobe that allows you to develop Flash games; so in order for FlashDevelop to build Flash SWF files, we need to download Flex and tell FlashDevelop where to find it. Go to [this page][3] and download it.
+First we need to download the Flex 4 SDK. This is the free codebase provided by Adobe that allows you to develop Flash games; so in order for FlashDevelop to build Flash SWF files, we need to download Flex and tell FlashDevelop where to find it. Go to [this page][flex-sdk] and download it.
 
 Once you've done that, locate your ZIP file and unzip all the Flex files into a location you can remember (for example, I used `C:\Flex`), so we can point FlashDevelop to this location later.
 
 <h2 id="download-debug">4. Download the Debug Player</h2>
 
-Now, we have to install the debugger version of Flash Player. This is a special version of Flash Player which has some extra features for developers that you'll want to be using in FlashDevelop. So go to [this page][4] and scroll down to here:
+Now, we have to install the debugger version of Flash Player. This is a special version of Flash Player which has some extra features for developers that you'll want to be using in FlashDevelop. So go to [this page][flash-player] and scroll down to here:
 
 **Adobe Flash Player 10 Debugger Versions (aka debug players or content debuggers)**
 
@@ -151,6 +151,6 @@ This will open up a window with a bunch of tabs on the left side and program opt
 
 Once you're finished, try running the Hello World test again. If it still doesn't work, leave a comment [in the developers forums](http://developers.useflashpunk.net).
 
-  [1]: http://www.flashdevelop.org/
-  [3]: http://www.adobe.com/devnet/flex/flex-sdk-download.html
-  [4]: http://www.adobe.com/support/flashplayer/downloads.html
+  [flashdevelop]: http://www.flashdevelop.org/ "FlashDevelop"
+  [flex-sdk]: http://www.adobe.com/devnet/flex/flex-sdk-download.html "Flex SDK"
+  [flash-player]: http://www.adobe.com/support/flashplayer/downloads.html "Flash Player"

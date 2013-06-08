@@ -8,9 +8,9 @@ FlashPunk is an ActionScript 3 library, meaning it is not a piece of software or
 
 So your first step is to actually get the FlashPunk source files.
 
-[Download FlashPunk][1]
+[Download FlashPunk][home]
 
-If you've followed the [Setting up FlashDevelop][2] tutorial, you know how to start a new basic AS3 Project and compile it. To add FlashPunk into your current project, first extract the archive you downloaded. Contained should be a folder called net; everything within that folder is FlashPunk. So copy that whole net folder into your project next to your Main.as class. Once you've done that, your project directory (relative to Main.as) should look like this:
+If you've followed the [Setting up FlashDevelop][setting-up-flashdevelop] tutorial, you know how to start a new basic AS3 Project and compile it. To add FlashPunk into your current project, first extract the archive you downloaded. Contained should be a folder called net; everything within that folder is FlashPunk. So copy that whole net folder into your project next to your Main.as class. Once you've done that, your project directory (relative to Main.as) should look like this:
 
     net/
     	flashpunk/
@@ -25,8 +25,8 @@ If you've followed the [Setting up FlashDevelop][2] tutorial, you know how to st
     		...etc.
     Main.as
 
-Once you've got that all set up, you're ready to proceed to [FlashPunk Basics][3]!
+Once you've got that all set up, you're ready to proceed to [FlashPunk Basics][flashpunk-basics]!
 
-  [1]: http://useflashpunk.net/
-  [2]: {% post_url 2000-01-01-setting-up-flashdevelop %}
-  [3]: {% post_url 2001-01-01-flashpunk-basics %}
+[home]: http://useflashpunk.net/ "FlashPunk Homepage"
+[setting-up-flashdevelop]: {% post_url 2000-01-01-setting-up-flashdevelop %} "Setting Up FlashDevelop"
+[flashpunk-basics]: {% post_url 2001-01-01-flashpunk-basics %} "FlashPunk Basics"

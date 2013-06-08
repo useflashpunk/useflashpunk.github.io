@@ -4,23 +4,26 @@ title: Animated Sprites
 category: intermediate
 ---
 
-In [FlashPunk Basics][1], we covered [embedding graphics][2] and assigning them to entities Entity as [Image][3] objects. Since the Image class is only for single-frame images, this tutorial will cover how to create an animated graphic using FlashPunk's [Spritemap][4] class.
+In [FlashPunk Basics][basics], we covered embedding graphics and assigning them to entities Entity as [Image][] objects. Since the Image class is only for single-frame images, this tutorial will cover how to create an animated graphic using FlashPunk's [Spritemap][] class.
 
- - Create a Spritemap
- - Create Animations
- - Playing Animations
+## Contents
 
+<ul class="nav nav-pills nav-stacked">
+	<li><a href="#create-a-spritemap">1. Create A Spritemap</a></li>
+	<li><a href="#create-animations">2. Create Animations</a></li>
+	<li><a href="#playing-animations">3. Playing Animations</a></li>
+</ul>
 
-Create a Spritemap
---
+<h2 id="create-a-spritemap">Create A Spritemap</h2>
 
-The first thing we need to do is create a [Spritemap][5] object for our Entity, similar to how we created an Image before. For this example, I'll be animating this spritesheet: 
+The first thing we need to do is create a [Spritemap][] object for our Entity, similar to how we created an Image before. For this example, I'll be animating this spritesheet: 
 
-> <img src="/uploads/default/15/c26c6646668e1482.png" width="288" height="64">
-> 
-> *2010 © Tyriq Plummer*
+<div class="text-center">
+	<img src="{{ site.url }}/assets/swordguy.png" title="swordguy" class="img-polaroid">
+	<p><em>Copyright &copy; 2010 Tyriq Plummer</em></p>
+</div>
 
-The spritesheet's total size is 288×64 pixels, but each individual frame is 48×32 pixels, which is what we need to know to create it into a [Spritemap][6] object. So in this example, we will create a Player class and embed the PNG first: 
+The spritesheet's total size is 288×64 pixels, but each individual frame is 48×32 pixels, which is what we need to know to create it into a [Spritemap][] object. So in this example, we will create a Player class and embed the PNG first: 
 
 {% highlight actionscript %}
 package
@@ -65,10 +68,9 @@ package
 
 So as you see here, creating a Spritemap is similar to creating an Image. You create the object and pass the source file (in this case, SWORDGUY) into it. But since a Spritemap does not display a single image, but rather individual frames of a spritesheet, it needs to know the frame size. So I pass in the width and height as well (48 and 32).
 
-Creating animations
---
+<h2 id="creating-animations">Creating Animations</h2>
 
-Now, we want to assign specific animations to our spritemap. So our **sprSwordguy** spritesheet has two animations in this spritesheet, a standing animation (top), and a running animation (bottom), both which are 6 frames long. We assign animations to a spritesheet by using its [add(][7]) function, like this: 
+Now, we want to assign specific animations to our spritemap. So our **sprSwordguy** spritesheet has two animations in this spritesheet, a standing animation (top), and a running animation (bottom), both which are 6 frames long. We assign animations to a spritesheet by using its [add(][spritemap-add]) function, like this: 
 
 {% highlight actionscript %}
 package
@@ -101,10 +103,10 @@ Here, I create two animations, "stand" and "run". The add() function takes 4 par
 
 You name the animation so you can access it later, when you want to play or switch animations. Then, you assign a set of frames to it. The top-left frame in a spritesheet is frame 0, and they count up left-to-right and then top-to-bottom. 
 
-> <img src="/uploads/default/16/0ab577aad6215a76.png" width="288"
-> height="64">
-> 
-> *An example of the frame index layout.*
+<div class="text-center">
+	<img src="{{ site.url }}/assets/swordguy-indexed.png" title="swordguy" class="img-polaroid">
+	<p><em>An example of the frame index layout.</em></p>
+</div>
 
 The third value is the animation speed, in frames per second, at which you want it to animate. I chose 20 for these two particular animations. And finally, the last parameter is whether you want the animation to loop or not. Non-looping animations will stop on the last frame and stay there until you start them again or change the animation. Looping animations will keep cycling through the selected frames infinitely until you stop or change the animation. 
 
@@ -133,9 +135,9 @@ package
 }
 {% endhighlight %}
 
-Playing animations
+<h2 id="playing-animations">Playing Animations</h2>
 
-Once you've created your desired animations, you can tell them which animation to play using the Spritemap's [play()][8] function, like this: 
+Once you've created your desired animations, you can tell them which animation to play using the Spritemap's [play()][spritemap-play] function, like this: 
 
 {% highlight actionscript %}
 sprSwordguy.play("stand");
@@ -144,22 +146,18 @@ sprSwordguy.play("stand");
 So here, I call the play() function and tell it to play my pre-assigned "stand" animation. The animation will then start at the first frame, animate through the assigned frames, and loop continuously if desired. You can call play() at any time to switch which animation your Entity is playing. 
 TIP
 
-> If you tell your Spritemap to play an animation that it is already
-> currently playing, nothing will happen. But if you want it to reset
-> the animation and start back at the beginning, you can invoke the
-> reset parameter, like this:
+<div class="alert alert-info">
+
+<p>If you tell your Spritemap to play an animation that it is already currently playing, nothing will happen. But if you want it to reset the animation and start back at the beginning, you can invoke the reset parameter, like this:</p>
 
 {% highlight actionscript %}
 sprSwordguy.play("stand", true);
 {% endhighlight %}
 
-  [1]: {% post_url 2001-01-01-flashpunk-basics %}
-  [2]: {% post_url 2001-01-01-flashpunk-basics %}
-  [3]: http://useflashpunk.net/docs/net/flashpunk/graphics/Image.html
-  [4]: http://useflashpunk.net/docs/net/flashpunk/graphics/Spritemap.html
-  [5]: http://useflashpunk.net/docs/net/flashpunk/graphics/Spritemap.html
-  [6]: http://useflashpunk.net/docs/net/flashpunk/graphics/Spritemap.html
-  [7]: http://useflashpunk.net/docs/net/flashpunk/graphics/Spritemap.html#add%28%29
-  [8]: http://useflashpunk.net/docs/net/flashpunk/graphics/Spritemap.html#play%28%29
+</div>
 
-*Original tutorial by Chevy Ray Johnston*
+[basics]: {% post_url 2001-01-01-flashpunk-basics %}
+[image]: http://useflashpunk.net/docs/net/flashpunk/graphics/Image.html
+[spritemap]: http://useflashpunk.net/docs/net/flashpunk/graphics/Spritemap.html
+[spritemap-add]: http://useflashpunk.net/docs/net/flashpunk/graphics/Spritemap.html#add%28%29
+[spritemap-play]: http://useflashpunk.net/docs/net/flashpunk/graphics/Spritemap.html#play%28%29
