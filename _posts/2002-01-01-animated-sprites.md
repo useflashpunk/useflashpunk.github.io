@@ -66,11 +66,11 @@ package
 }
 {% endhighlight %}
 
-So as you see here, creating a Spritemap is similar to creating an Image. You create the object and pass the source file (in this case, SWORDGUY) into it. But since a Spritemap does not display a single image, but rather individual frames of a spritesheet, it needs to know the frame size. So I pass in the width and height as well (48 and 32).
+So as you see here, creating a Spritemap is similar to creating an Image. You create the object and pass the source file (in this case, `SWORDGUY`) into it. But since a Spritemap does not display a single image, but rather individual frames of a spritesheet, it needs to know the frame size. So I pass in the width and height as well (48 and 32).
 
 <h2 id="creating-animations">Creating Animations</h2>
 
-Now, we want to assign specific animations to our spritemap. So our **sprSwordguy** spritesheet has two animations in this spritesheet, a standing animation (top), and a running animation (bottom), both which are 6 frames long. We assign animations to a spritesheet by using its [add(][spritemap-add]) function, like this: 
+Now, we want to assign specific animations to our spritemap. So our `sprSwordguy` spritesheet has two animations in this spritesheet, a standing animation (top), and a running animation (bottom), both which are 6 frames long. We assign animations to a spritesheet by using its [`add()`][spritemap-add] function, like this: 
 
 {% highlight actionscript %}
 package
@@ -94,7 +94,7 @@ package
 }
 {% endhighlight %}
 
-Here, I create two animations, "stand" and "run". The add() function takes 4 parameters, which are as follows:
+Here, I create two animations, "stand" and "run". The `add()` function takes 4 parameters, which are as follows:
 
  - Name (a string)
  - Frames (an array frames to play)
@@ -137,14 +137,13 @@ package
 
 <h2 id="playing-animations">Playing Animations</h2>
 
-Once you've created your desired animations, you can tell them which animation to play using the Spritemap's [play()][spritemap-play] function, like this: 
+Once you've created your desired animations, you can tell them which animation to play using the Spritemap's [`play()`][spritemap-play] function, like this: 
 
 {% highlight actionscript %}
 sprSwordguy.play("stand");
 {% endhighlight %}
 
-So here, I call the play() function and tell it to play my pre-assigned "stand" animation. The animation will then start at the first frame, animate through the assigned frames, and loop continuously if desired. You can call play() at any time to switch which animation your Entity is playing. 
-TIP
+So here, I call the `play()` function and tell it to play my pre-assigned "stand" animation. The animation will then start at the first frame, animate through the assigned frames, and loop continuously if desired. You can call `play()` at any time to switch which animation your Entity is playing.
 
 <div class="alert alert-info">
 
