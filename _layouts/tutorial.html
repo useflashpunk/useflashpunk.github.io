@@ -48,6 +48,11 @@
           {% for post in site.categories.intermediate reversed %}
           <li><a href="{{ site.url }}{{ post.url }}">{{ post.title }}</a></li>
           {% endfor %}
+
+          <li class="nav-header">Advanced</li>
+          {% for post in site.categories.advanced reversed %}
+          <li><a href="{{ site.url }}{{ post.url }}">{{ post.title }}</a></li>
+          {% endfor %}
         </ul>
       </div>
       <div class="span9">
