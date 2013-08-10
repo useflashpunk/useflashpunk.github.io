@@ -6,7 +6,7 @@ title: A game creation library for Actionscript 3
     <div class="container-narrow">
       <div class="jumbotron">
         <h1>Create games. Easy.</h1>
-        <p class="lead">FlashPunk is a free ActionScript 3 library designed for developing 2D Flash games. It provides you with a fast, clean framework to prototype and develop your games in. This means that most of the dirty work is already done, letting you concentrate on the design and testing of your game.</p>
+        <p class="lead text-left">FlashPunk is a free ActionScript 3 library designed for developing 2D Flash games. It provides you with a fast, clean framework to prototype and develop your games in. This means that most of the dirty work is already done, letting you concentrate on the design and testing of your game.</p>
       </div>
 
       <div class="row-fluid primary-action">
@@ -25,51 +25,106 @@ title: A game creation library for Actionscript 3
 
       <hr>
 
-      <h1 class="text-center">It's the total package.</h1>
+      <h1 class="text-center">The <i>total</i> package.</h1>
       
       <p class="lead">Not only is FlashPunk <em>absolutely free</em>, it also contains everything you'll need to make the game you want. From its robust and dead-simple sprite-based graphics handling to its powerful live debugger, you won't need a team of berets and neckbeards to make your game come to life.</p>
-      
-      <div class="row-fluid marketing">
-        <div class="span6">
+
+      <!-- Graphics -->
+      <div class="media row-fluid">
+        <div class="span2 offset2 media-object text-center">
+          <img src="/img/graphics.jpg" width="128" height="128" class="img-rounded">
+        </div>
+        <div class="span6 media-body">
           <h4>Graphics</h4>
           <p>Helper classes for animations, tilemaps, text, backdrops, and more with z-sorted render lists for easy depth management.</p>
         </div>
-        <div class="span6">
-          <h4>Collision</h4>
-          <p>Fast & manageable rectangle, pixel, and grid collision system.</p>
-        </div>
       </div>
-      <div class="row-fluid marketing">
-        <div class="span6">
-          <h4>Animation</h4>
-          <p>Powerful motion tweening for linear, curved, and path-based movement.</p>          
+
+      <!-- Collision -->
+      <div class="media row-fluid">
+        <div class="span6 offset2 media-body">
+          <div class="media-body">
+            <h4>Collision</h4>
+            <p>Fast and manageable rectangle, pixel, and grid collision system with a plethora of built-in collision options.</p>
+          </div>
         </div>
-        <div class="span6">
-          <h4>Audio</h4>
-          <p>Sound effect support with volume, panning, and fading/crossfading.</p>
-        </div>
-      </div>
-      <div class="row-fluid marketing">
-        <div class="span6">
-          <h4>Particles</h4>
-          <p>Quick and efficient particle effects and emitters.</p>
-        </div>
-        <div class="span6">
-          <h4>Timesteps</h4>
-          <p>Framerate-independent and fixed-framerate timestep support.</p>
-        </div>
-      </div>
-      <div class="row-fluid marketing">
-        <div class="span6">
-          <h4>Input</h4>
-          <p>Simple keyboard and mouse input state checking.</p>
-        </div>
-        <div class="span6">
-          <h4>Built-in Debugging</h4>
-          <p>Handy console for real-time debugging and information tracking.</p>
+        <div class="span2 media-object text-center">
+          <img src="/img/collision.jpg" width="128" height="128" class="img-rounded">
         </div>
       </div>
 
-      <p>If all this just isn't enough and you absolutely <i>require</i> a team of berets and neckbeards, the <a href="http://developers.useflashpunk.net">FlashPunk Developers community</a> is an incredible resource eager to answer any question you can fathom. Oh, and its free as well.</p>
+      <!-- Animation -->
+      <div class="media row-fluid">
+        <div class="span2 offset2 media-object text-center">
+          <img src="/img/animation.jpg" width="128" height="128" class="img-rounded">
+        </div>
+        <div class="span6 media-body">
+          <h4>Animation</h4>
+          <p>Powerful motion tweening for linear, curved, and path-based movement as well as spritesheet support and image transformation.</p>
+        </div>
+      </div>
+
+      <!-- Audio -->
+      <div class="media row-fluid">
+        <div class="span6 offset2 media-body">
+          <div class="media-body">
+            <h4>Audio</h4>
+            <p>Sound effect support with volume, panning, and fading/crossfading, complete with one-line sound playback.</p>
+          </div>
+        </div>
+        <div class="span2 media-object text-center">
+          <img src="/img/audio.jpg" width="128" height="128" class="img-rounded">
+        </div>
+      </div>
+
+      <!-- Particles -->
+      <div class="media row-fluid">
+        <div class="span2 offset2 media-object text-center">
+          <img src="/img/particles.jpg" width="128" height="128" class="img-rounded">
+        </div>
+        <div class="span6 media-body">
+          <h4>Particles</h4>
+          <p>Quick and efficient particle effects and emitters allow for beautiful particle systems without slowing things down.</p>
+        </div>
+      </div>
+
+      <!-- Timesteps -->
+      <div class="media row-fluid">
+        <div class="span6 offset2 media-body">
+          <div class="media-body">
+            <h4>Timesteps</h4>
+            <p>Framerate-independent and fixed-framerate timestep support allow you to decide what mode is best for you and your game.</p>
+          </div>
+        </div>
+        <div class="span2 media-object text-center">
+          <img src="/img/timestep.jpg" width="128" height="128" class="img-rounded">
+        </div>
+      </div>
+
+      <!-- Input -->
+      <div class="media row-fluid">
+        <div class="span2 offset2 media-object text-center">
+          <img src="/img/input.jpg" width="128" height="128" class="img-rounded">
+        </div>
+        <div class="span6 media-body">
+          <h4>Input</h4>
+          <p>Simple keyboard and mouse input state checking makes setting keys and events incredibly easy, yet powerful.</p>
+        </div>
+      </div>
+
+      <!-- Debugging -->
+      <div class="media row-fluid">
+        <div class="span6 offset2 media-body">
+          <div class="media-body">
+            <h4>Built-in Debugging</h4>
+            <p>Handy console for real-time debugging and information tracking. It even allows moving the camera and inspecting entities while playing!</p>
+          </div>
+        </div>
+        <div class="span2 media-object text-center">
+          <img src="/img/debugging.jpg" width="128" height="128" class="img-rounded">
+        </div>
+      </div>
+
+      <p class="lead">If all this just isn't enough and you absolutely <i>require</i> a team of berets and neckbeards, the <a href="http://developers.useflashpunk.net">FlashPunk Developers community</a> is an incredible resource eager to answer any question you can fathom. Oh, and its free as well.</p>
 
     </div>
