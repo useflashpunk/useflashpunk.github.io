@@ -1,7 +1,7 @@
 useflashpunk.net
 ================
 
-The website for useflashpunk.net.
+The website for [useflashpunk.net](http://useflashpunk.net), the current home of [FlashPunk](https://github.com/Draknek/FlashPunk).
 
 Local Testing
 -------------
