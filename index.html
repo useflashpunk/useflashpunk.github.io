@@ -3,128 +3,84 @@ layout: default
 title: A game creation library for Actionscript 3
 ---
 
-    <div class="container-narrow">
-      <div class="jumbotron">
-        <h1>Create games. Easy.</h1>
-        <p class="lead text-left">FlashPunk is a free ActionScript 3 library designed for developing 2D Flash games. It provides you with a fast, clean framework to prototype and develop your games in. This means that most of the dirty work is already done, letting you concentrate on the design and testing of your game.</p>
-      </div>
+<div class="jumbotron">
+  <h1>Create games. Easy.</h1>
+  <p class="lead text-left">FlashPunk is a free ActionScript 3 library designed for developing 2D Flash games. It provides you with a fast, clean framework to prototype and develop your games in. This means that most of the dirty work is already done, letting you concentrate on the design and testing of your game.</p>
 
-      <div class="row-fluid primary-action">
-        <div class="span8 offset2">
-        <a class="btn btn-large btn-pink btn-block" href="https://github.com/Draknek/FlashPunk/releases/tag/v1.7.2"><i class="icon-download icon-white"></i> Get FlashPunk! (1.7.2)</a>
-        </div>
-      </div>
-      <div class="row-fluid">
-        <div class="span4 offset2">
-          <a class="btn btn-block" href="https://github.com/Draknek/FlashPunk"><i class="icon-random"></i> View on GitHub</a>
-        </div>
-        <div class="span4">  
-          <a class="btn btn-block" href="/tutorials"><i class="icon-book"></i> Read Tutorials</a>
-        </div>
-      </div>
+  <a class="btn btn-lg btn-primary" href="https://github.com/Draknek/FlashPunk/releases/tag/v1.7.2"><i class="fa fa-download"></i> Get FlashPunk! (1.7.2)</a>
+</div>
 
-      <hr>
+<div class="container">
+  <h1>The <i>total</i> package.</h1>
 
-      <h1 class="text-center">The <i>total</i> package.</h1>
-      
-      <p class="lead">Not only is FlashPunk <em>absolutely free</em>, it also contains everything you'll need to make the game you want. From its robust and dead-simple sprite-based graphics handling to its powerful live debugger, you won't need a team of berets and neckbeards to make your game come to life.</p>
+  <p class="lead">Not only is FlashPunk <em>absolutely free</em>, it also contains everything you'll need to make the game you want. From its robust and dead-simple sprite-based graphics handling to its powerful live debugger, you won't need a team of berets and neckbeards to make your game come to life.</p>
 
-      <!-- Graphics -->
-      <div class="media row-fluid">
-        <div class="span2 offset2 media-object text-center">
-          <img src="/img/graphics.jpg" width="128" height="128" class="img-rounded">
-        </div>
-        <div class="span6 media-body">
-          <h4>Graphics</h4>
-          <p>Helper classes for animations, tilemaps, text, backdrops, and more with z-sorted render lists for easy depth management.</p>
-        </div>
-      </div>
+  <h2>Features</h2>
 
-      <!-- Collision -->
-      <div class="media row-fluid">
-        <div class="span6 offset2 media-body">
-          <div class="media-body">
-            <h4>Collision</h4>
-            <p>Fast and manageable rectangle, pixel, and grid collision system with a plethora of built-in collision options.</p>
-          </div>
-        </div>
-        <div class="span2 media-object text-center">
-          <img src="/img/collision.jpg" width="128" height="128" class="img-rounded">
-        </div>
-      </div>
+  <!-- Graphics -->
+  <h3>Graphics</h3>
+  <p>Helper classes for animations, tilemaps, text, backdrops, and more with z-sorted render lists for easy depth management.</p>
+{% highlight actionscript %}
+// Create a new Image from imported image.
+[Embed(source = 'player.png')]
+private const PLAYER_IMAGE:Class;
+var playerImage:Image = new Image(PLAYER_IMAGE);
+{% endhighlight %}
 
-      <!-- Animation -->
-      <div class="media row-fluid">
-        <div class="span2 offset2 media-object text-center">
-          <img src="/img/animation.jpg" width="128" height="128" class="img-rounded">
-        </div>
-        <div class="span6 media-body">
-          <h4>Animation</h4>
-          <p>Powerful motion tweening for linear, curved, and path-based movement as well as spritesheet support and image transformation.</p>
-        </div>
-      </div>
+  <!-- Collision -->
+  <h3>Collision</h3>
+  <p>Fast and manageable rectangle, pixel, and grid collision system with a plethora of built-in collision options.</p>
+{% highlight actionscript %}
+// Check for collision between the player and all enemies.
+var touchedEnemy:Entity = player.collide("enemy", player.x, player.y);
+{% endhighlight %}
 
-      <!-- Audio -->
-      <div class="media row-fluid">
-        <div class="span6 offset2 media-body">
-          <div class="media-body">
-            <h4>Audio</h4>
-            <p>Sound effect support with volume, panning, and fading/crossfading, complete with one-line sound playback.</p>
-          </div>
-        </div>
-        <div class="span2 media-object text-center">
-          <img src="/img/audio.jpg" width="128" height="128" class="img-rounded">
-        </div>
-      </div>
+  <!-- Animation -->
+  <h3>Motion</h3>
+  <p>Powerful motion tweening for linear, curved, and path-based movement as well as spritesheet support and image transformation.</p>
+{% highlight actionscript %}
+// Move an enemy across the screen with a tween, stopping against walls.
+enemy.moveBy(5, 0, "wall");
+{% endhighlight %}
 
-      <!-- Particles -->
-      <div class="media row-fluid">
-        <div class="span2 offset2 media-object text-center">
-          <img src="/img/particles.jpg" width="128" height="128" class="img-rounded">
-        </div>
-        <div class="span6 media-body">
-          <h4>Particles</h4>
-          <p>Quick and efficient particle effects and emitters allow for beautiful particle systems without slowing things down.</p>
-        </div>
-      </div>
+  <!-- Audio -->
+  <h3>Audio</h3>
+  <p>Sound effect support with volume, panning, and fading/crossfading, complete with one-line sound playback.</p>
+{% highlight actionscript %}
+// Play a shoot sound.
+[Embed(source = 'shoot.mp3')] private const SHOOT:Class;
+var shoot:Sfx = new Sfx(SHOOT);
+shoot.play();
+{% endhighlight %}
 
-      <!-- Timesteps -->
-      <div class="media row-fluid">
-        <div class="span6 offset2 media-body">
-          <div class="media-body">
-            <h4>Timesteps</h4>
-            <p>Framerate-independent and fixed-framerate timestep support allow you to decide what mode is best for you and your game.</p>
-          </div>
-        </div>
-        <div class="span2 media-object text-center">
-          <img src="/img/timestep.jpg" width="128" height="128" class="img-rounded">
-        </div>
-      </div>
 
-      <!-- Input -->
-      <div class="media row-fluid">
-        <div class="span2 offset2 media-object text-center">
-          <img src="/img/input.jpg" width="128" height="128" class="img-rounded">
-        </div>
-        <div class="span6 media-body">
-          <h4>Input</h4>
-          <p>Simple keyboard and mouse input state checking makes setting keys and events incredibly easy, yet powerful.</p>
-        </div>
-      </div>
+  <!-- Particles -->
+  <h3>Particles</h3>
+  <p>Quick and efficient particle effects and emitters allow for beautiful particle systems without slowing things down.</p>
 
-      <!-- Debugging -->
-      <div class="media row-fluid">
-        <div class="span6 offset2 media-body">
-          <div class="media-body">
-            <h4>Built-in Debugging</h4>
-            <p>Handy console for real-time debugging and information tracking. It even allows moving the camera and inspecting entities while playing!</p>
-          </div>
-        </div>
-        <div class="span2 media-object text-center">
-          <img src="/img/debugging.jpg" width="128" height="128" class="img-rounded">
-        </div>
-      </div>
+  <!-- Timesteps -->
+  <h3>Timesteps</h3>
+  <p>Framerate-independent and fixed-framerate timestep support allow you to decide what mode is best for you and your game.</p>
+{% highlight actionscript %}
+// Add the frame time to a timer.
+timer += FP.elapsed;
+{% endhighlight %}
 
-      <p class="lead">If all this just isn't enough and you absolutely <i>require</i> a team of berets and neckbeards, the <a href="http://developers.useflashpunk.net">FlashPunk Developers community</a> is an incredible resource eager to answer any question you can fathom. Oh, and its free as well.</p>
+  <!-- Input -->
+  <h3>Input</h3>
+  <p>Simple keyboard and mouse input state checking makes setting keys and events incredibly easy, yet powerful.</p>
+{% highlight actionscript %}
+// Call a function when Space is pressed.
+if (Input.pressed(Key.Space)) {
+  spacebar();
+}
+{% endhighlight %}
 
-    </div>
+  <!-- Debugging -->
+  <h3>Built-in Debugging</h3>
+  <p>Handy console for real-time debugging and information tracking. It even allows moving the camera and inspecting entities while playing!</p>
+
+  <h2>Community</h2>
+
+  <p class="lead">If all this just isn't enough and you absolutely <i>require</i> a team of berets and neckbeards, the <a href="http://developers.useflashpunk.net">FlashPunk Developers community</a> is an incredible resource eager to answer any question you can fathom. Oh, and its free as well.</p>
+</div>

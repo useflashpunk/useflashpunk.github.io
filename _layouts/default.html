@@ -2,67 +2,30 @@
 <html>
   <head>
     <title>FlashPunk: {{ page.title }}</title>
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Bootstrap -->
     <link href="{{ site.url }}/css/bootstrap.min.css" rel="stylesheet" media="screen">
+    
     <link rel="icon" type="image/png" href="{{ site.url}}/img/fp-favicon.png">
+    <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
     <style type="text/css">
 
-      /* Custom container */
-      .container-narrow {
-        margin: 0 auto;
-        max-width: 800px;
-      }
-      .container-narrow > hr {
-        margin: 30px 0;
-      }
-
-      /* Main marketing message and sign up button */
-      .jumbotron {
-        margin: 60px 0;
-        text-align: center;
-      }
-      .jumbotron h1 {
-        font-size: 72px;
-        line-height: 1;
-      }
-      .jumbotron .btn {
-        font-size: 21px;
-        padding: 14px 24px;
-      }
-
-      /* Supporting marketing content */
-      .marketing {
-        margin: 20px 0;
-      }
-      .marketing p + h4 {
-        margin-top: 28px;
-      }
-
-      .primary-action {
-        margin-bottom: 16px;
-      }
-
-      .lead {
-        margin-top: 48px;
-      }
-
       {% include styles.css %}
+    }
       
     </style>
+    <link href="{{site.url}}/css/pygments.css" rel="stylesheet" media="screen">
   </head>
 
   <body>
-
+  <div id="wrap">
+    <div id="push"></div>
     {% include navigation.html %}
     
-    <div class="container-narrow">
-    
     {{ content }}    
-     
-    </div>
       
-    <hr>
+  </div>
 
     {% include footer.html %}
     

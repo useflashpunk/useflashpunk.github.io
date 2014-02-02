@@ -1,79 +1,65 @@
+html,
+body {
+  height: 100%;
+  /* The html and body elements cannot have any padding or margin. */
+}
+/* Wrapper for page content to push down footer */
+#wrap {
+  min-height: 100%;
+  height: auto !important;
+  height: 100%;
+  /* Negative indent footer by it's height */
+  margin: 0 auto -60px;
+  padding-bottom: 60px;
+}
+
+/* Set the fixed height of the footer here */
+#push,
+footer {
+  height: 60px;
+}
+footer {
+  border-top: 1px solid #eee;
+  background-color: #f9f9f9;
+}
+
+footer .container {
+  height: 60px;
+}
+
+footer .contents {
+  margin: 18px auto;
+}
+
+#site-logo {
+  max-width: 122px;
+  vertical-align: middle;
+}
+
+.navbar-nav
+{
+  margin-top:-8px;
+}
+
+.title {
+  display: table;
+  float: left;
+  height: 40px;
+}
+
 .masthead {
-  height: 50px;
-  padding-top: 10px;
-  border-bottom: 1px solid #dddddd;
-  background: #333333; /* Old browsers */
-  background: -moz-linear-gradient(top,  #393939 0%, #333333 100%); /* FF3.6+ */
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#393939), color-stop(100%,#333333)); /* Chrome,Safari4+ */
-  background: -webkit-linear-gradient(top,  #393939 0%,#333333 100%); /* Chrome10+,Safari5.1+ */
-  background: -o-linear-gradient(top,  #393939 0%,#333333 100%); /* Opera 11.10+ */
-  background: -ms-linear-gradient(top,  #393939 0%,#333333 100%); /* IE10+ */
-  background: linear-gradient(to bottom,  #393939 0%,#333333 100%); /* W3C */
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#393939', endColorstr='#333333',GradientType=0 ); /* IE6-9 */
+  height: 60px;
+  padding-top: 3px;
+  padding-right: 3px;
+  border-bottom: 1px solid #eee;
+  background: #f9f9f9;
+  position: fixed;
+  z-index: 1000;
+  min-width: 100%;
+  top: 0;
+  left: 0;
 }
 
-.masthead h2{
-  line-height: 12px;
-}
-
-.masthead h2 a {
-  color: #ffffff;
-}
-
-.masthead h2 a:hover,
-.masthead h2 a:active {
-  color:#ed206b;
-  text-decoration: none;
-}
-
-.masthead li {
-  font-size: 16px;
-}
-
-.footer {
-  font-size: 12px;
-  color: #666;
-  margin-top: -14px;
-  max-width: 800px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-hr {
-  margin-right: 1em;
-  margin-left: 1em;
-}
-
-.btn-pink {
-  color: #ffffff;
-  padding: 36px 19px;
-  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
-  background-color: #ed207b;
-  background-image: -moz-linear-gradient(top, #f25a9e, #ed207b);
-  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#f25a9e), to(#ed207b));
-  background-image: -webkit-linear-gradient(top, #f25a9e, #ed207b);
-  background-image: -o-linear-gradient(top, #f25a9e, #ed207b);
-  background-image: linear-gradient(to bottom, #f25a9e, #ed207b);
-  background-repeat: repeat-x;
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fff25a9e', endColorstr='#ffed207b', GradientType=0);
-  border-color: #ed207b #ed207b #387038;
-  border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
-  *background-color: #ed207b;
-  /* Darken IE7 buttons by default so they stand out more given they won't have borders */
-
-  filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
-}
-.btn-pink:hover,
-.btn-pink:focus,
-.btn-pink:active,
-.btn-pink.active,
-.btn-pink.disabled,
-.btn-pink[disabled] {
-  color: #ffffff;
-  background-color: #ed207b;
-  *background-color: #b30f59;
-}
-.btn-pink:active,
-.btn-pink.active {
-  background-color: #a50d52 \9;
+.masthead .contents {
+  margin: 10px 0;
 }
