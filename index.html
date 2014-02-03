@@ -11,21 +11,29 @@ title: A game creation library for Actionscript 3
 </div>
 
 <div class="container">
-  <h1>The <i>total</i> package.</h1>
-
+  <div class="page-header">
+    <h1>The <i>total</i> package.</h1>
+  </div>
   <p class="lead">Not only is FlashPunk <em>absolutely free</em>, it also contains everything you'll need to make the game you want. From its robust and dead-simple sprite-based graphics handling to its powerful live debugger, you won't need a team of berets and neckbeards to make your game come to life.</p>
 
   <h2>Features</h2>
 
   <!-- Graphics -->
-  <h3>Graphics</h3>
-  <p>Helper classes for animations, tilemaps, text, backdrops, and more with z-sorted render lists for easy depth management.</p>
+  <div class="media">
+    <a class="pull-left" href="/#graphics">
+    <img class="media-object" src="/assets/landing/graphics-image.png">
+    </a>
+    <div class="media-body">
+      <h3 id="graphics">Graphics</h3>
+      <p>Helper classes for animations, tilemaps, text, backdrops, and more with z-sorted render lists for easy depth management.</p>
 {% highlight actionscript %}
 // Create a new Image from imported image.
 [Embed(source = 'player.png')]
 private const PLAYER_IMAGE:Class;
 var playerImage:Image = new Image(PLAYER_IMAGE);
 {% endhighlight %}
+    </div>
+  </div>
 
   <!-- Collision -->
   <h3>Collision</h3>
