@@ -3,6 +3,7 @@ body {
   height: 100%;
   /* The html and body elements cannot have any padding or margin. */
 }
+
 /* Wrapper for page content to push down footer */
 #wrap {
   min-height: 100%;
@@ -29,6 +30,11 @@ footer .container {
 
 footer .contents {
   margin: 18px auto;
+}
+
+#main-header {
+  background: #ddd url("/assets/landing/landing-header-large.png") no-repeat center center;
+  min-height: 200px;
 }
 
 #site-logo {
