@@ -19,11 +19,10 @@ title: A game creation library for Actionscript 3
   <h2>Features</h2>
 
   <!-- Graphics -->
-  <div class="media">
-    
+  <div class="media"> 
     <img class="pull-left media-object" src="/assets/landing/graphics-image.png">
     <div class="media-body">
-      <h3 id="graphics">Graphics</h3>
+      <h3>Graphics</h3>
       <p>Helper classes for animations, tilemaps, text, backdrops, and more with z-sorted render lists for easy depth management.</p>
 {% highlight actionscript %}
 // Create a new Image from imported image.
@@ -35,57 +34,89 @@ var playerImage:Image = new Image(PLAYER_IMAGE);
   </div>
 
   <!-- Collision -->
-  <h3>Collision</h3>
-  <p>Fast and manageable rectangle, pixel, and grid collision system with a plethora of built-in collision options.</p>
+  <div class="media"> 
+    <img class="pull-left media-object" src="/assets/landing/collision-image.png">
+    <div class="media-body">
+      <h3>Collision</h3>
+      <p>Fast and manageable rectangle, pixel, and grid collision system with a plethora of built-in collision options.</p>
 {% highlight actionscript %}
 // Check for collision between the player and all enemies.
 var touchedEnemy:Entity = player.collide("enemy", player.x, player.y);
 {% endhighlight %}
+    </div>
+  </div>
 
   <!-- Animation -->
-  <h3>Motion</h3>
-  <p>Powerful motion tweening for linear, curved, and path-based movement as well as spritesheet support and image transformation.</p>
+  <div class="media"> 
+    <img class="pull-left media-object" src="/assets/landing/animation-image.png">
+    <div class="media-body">
+      <h3>Motion</h3>
+      <p>Powerful motion tweening for linear, curved, and path-based movement as well as spritesheet support and image transformation.</p>
 {% highlight actionscript %}
 // Move an enemy across the screen with a tween, stopping against walls.
 enemy.moveBy(5, 0, "wall");
 {% endhighlight %}
-
+    </div>
+  </div>
   <!-- Audio -->
-  <h3>Audio</h3>
-  <p>Sound effect support with volume, panning, and fading/crossfading, complete with one-line sound playback.</p>
+  <div class="media"> 
+    <img class="pull-left media-object" src="/assets/landing/audio-image.png">
+    <div class="media-body">
+      <h3>Audio</h3>
+      <p>Sound effect support with volume, panning, and fading/crossfading, complete with one-line sound playback.</p>
 {% highlight actionscript %}
 // Play a shoot sound.
 [Embed(source = 'shoot.mp3')] private const SHOOT:Class;
 var shoot:Sfx = new Sfx(SHOOT);
 shoot.play();
 {% endhighlight %}
-
+    </div>
+  </div>
 
   <!-- Particles -->
-  <h3>Particles</h3>
-  <p>Quick and efficient particle effects and emitters allow for beautiful particle systems without slowing things down.</p>
+  <div class="media"> 
+    <img class="pull-left media-object" src="/assets/landing/particles-image.png">
+    <div class="media-body">
+      <h3>Particles</h3>
+      <p>Quick and efficient particle effects and emitters allow for beautiful particle systems without slowing things down.</p>
+    </div>
+  </div>
 
   <!-- Timesteps -->
-  <h3>Timesteps</h3>
-  <p>Framerate-independent and fixed-framerate timestep support allow you to decide what mode is best for you and your game.</p>
+  <div class="media"> 
+    <img class="pull-left media-object" src="/assets/landing/timestep-image.png">
+    <div class="media-body">
+      <h3>Timesteps</h3>
+      <p>Framerate-independent and fixed-framerate timestep support allow you to decide what mode is best for you and your game.</p>
 {% highlight actionscript %}
 // Add the frame time to a timer.
 timer += FP.elapsed;
 {% endhighlight %}
+    </div>
+  </div>
 
   <!-- Input -->
-  <h3>Input</h3>
-  <p>Simple keyboard and mouse input state checking makes setting keys and events incredibly easy, yet powerful.</p>
+  <div class="media"> 
+    <img class="pull-left media-object" src="/assets/landing/input-image.png">
+    <div class="media-body">
+      <h3>Input</h3>
+      <p>Simple keyboard and mouse input state checking makes setting keys and events incredibly easy, yet powerful.</p>
 {% highlight actionscript %}
 // Call a function when Space is pressed.
 if (Input.pressed(Key.Space)) {
   spacebar();
 }
 {% endhighlight %}
+    </div>
+  </div>
 
   <!-- Debugging -->
-  <h3>Built-in Debugging</h3>
-  <p>Handy console for real-time debugging and information tracking. It even allows moving the camera and inspecting entities while playing!</p>
+  <div class="media"> 
+    <div class="media-body">
+      <h3>Built-in Debugging</h3>
+      <p>Handy console for real-time debugging and information tracking. It even allows moving the camera and inspecting entities while playing!</p>
+    </div>
+  </div>
 
   <h2>Community</h2>
 
