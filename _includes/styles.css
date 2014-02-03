@@ -37,6 +37,10 @@ footer .contents {
   min-height: 400px;
 }
 
+.media > .pull-left {
+  margin-top: 25px;
+}
+
 #site-logo {
   max-width: 122px;
   vertical-align: middle;
