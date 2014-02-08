@@ -114,9 +114,15 @@ if (Input.pressed(Key.Space)) {
 
   <!-- Debugging -->
   <div class="media"> 
+    <img class="pull-left media-object" src="/assets/landing/debugger-image.png">
     <div class="media-body">
       <h3>Built-in Debugging</h3>
       <p>Handy console for real-time debugging and information tracking. It even allows moving the camera and inspecting entities while playing!</p>
+{% highlight actionscript %}
+// Enable the debugger and watch the player's speed.
+FP.console.enable();
+FP.console.watch(player.speed);
+{% endhighlight %}
     </div>
   </div>
 

@@ -33,7 +33,10 @@ footer .contents {
 }
 
 #main-header {
-  background: #ddd url("/assets/landing/landing-header-large.png") no-repeat left center;
+  background-color: #ddd;
+  background-position: 0 -60px;
+  background-image: url("/assets/landing/landing-header-large.png");
+  background-attachment: fixed;
   min-height: 400px;
 }
 
