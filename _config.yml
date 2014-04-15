@@ -1,6 +1,9 @@
 permalink: none
 url: http://useflashpunk.net
 
+# GitHub Pages deprecated Maruku
+markdown: kramdown
+
 # GitHub Pages forced options
 safe: true
 lsi: false
