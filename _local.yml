@@ -1,6 +1,9 @@
 # Jekyll Configuration for local testing.
 permalink: none
-url: 
+url:
+
+# GitHub Pages deprecated Maruku
+markdown: kramdown
 
 # GitHub Pages forced options
 safe: true
